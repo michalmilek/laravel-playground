@@ -1,0 +1,38 @@
+### Register a new user
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123"
+}
+
+### Login with the registered user
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "john@example.com",
+    "password": "password123"
+}
+
+### Fetch all products (secured endpoint, replace <token> with the actual token)
+GET http://localhost:8000/api/products
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5YzgzNTNiZC03ZTgyLTQwM2EtODhlMi01OWJkN2E3OTI2MzUiLCJqdGkiOiI1NWQxYjUyMjk2ZTBjY2ZiYmM2YTBjODQyZGRjNDBjZWI2MGRhYTE5ZDZiZmZjZGJhZGMwYzE3MmJlY2NlMTVhZDI3NjJmZTZiZDk1MWI1OCIsImlhdCI6MTcyMDg4MTEzMS42MDQ5NiwibmJmIjoxNzIwODgxMTMxLjYwNDk2MiwiZXhwIjoxNzUyNDE3MTMxLjYwMTc0OCwic3ViIjoiMSIsInNjb3BlcyI6W119.gHiZWZvtTm534oNuIB646aC1JDEF2LP8Y0aj6hXssZb5ndlRuWzdXhHB86nAQBmUin2QBMYM41e3rMbnkz6KeP7lRyE22iIVK2c-BxdY_xsPIEw1a-uzBXcmC84aYbNtT2XJto0zUJzIrgSrujR4DKfVk8LhZMZv0lBWzvgU-irEV3G6iVbIuJyXl-gAoA5fs7UP4avFNyotsHydb6aUNHTCDaALUiCGTUI38ylpNShEPcoXeTgzFZxyjWgnNa1y2HMU5DPQgPyH2V-pV98i9pFbKK9NxeZwjOD05FFUopNemRly4kXj1bOOGV8TMwbu4gW-a2br_rwLbC72VW9dZd_9wy9pfd5uVYw9YeV6IUZRChvkUcPisOX0FGnX2LQUz_U3ya1PF8qZlLjhYwiYlZP0dZhxUWhT4Tp_XwcPlAtvasfiNlFZ_mc95OZOMPUXo-rA-bxJcIs89ogU5XJobT0StHNxTEg_8WrPTxIEwdqSXugYCJ5RvEA0oDV0VBITFO8iDv4OTdbv41ZA_yVPigMIAS6gP7kLgQMmSBzl2u0x8-E6Afud2QJJyPoVquRvkGuj_y8hdd37GJBdwPsuGwVPexC6EeQAqCnLwM7WjUaIVyvupEsIIC8613R2MBkalx9NWR-m7pJ-LAwS6IFLi5Zfj_459L0TvVdO2E5eco4
+
+### Fetch a single product by ID (secured endpoint, replace <token> with the actual token and <product_id> with an actual product ID)
+GET http://localhost:8000/api/products/4
+Authorization: Bearer <token>
+
+### Create a new product (secured endpoint, replace <token> with the actual token)
+POST http://localhost:8000/api/products/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5YzgzNTNiZC03ZTgyLTQwM2EtODhlMi01OWJkN2E3OTI2MzUiLCJqdGkiOiI1NWQxYjUyMjk2ZTBjY2ZiYmM2YTBjODQyZGRjNDBjZWI2MGRhYTE5ZDZiZmZjZGJhZGMwYzE3MmJlY2NlMTVhZDI3NjJmZTZiZDk1MWI1OCIsImlhdCI6MTcyMDg4MTEzMS42MDQ5NiwibmJmIjoxNzIwODgxMTMxLjYwNDk2MiwiZXhwIjoxNzUyNDE3MTMxLjYwMTc0OCwic3ViIjoiMSIsInNjb3BlcyI6W119.gHiZWZvtTm534oNuIB646aC1JDEF2LP8Y0aj6hXssZb5ndlRuWzdXhHB86nAQBmUin2QBMYM41e3rMbnkz6KeP7lRyE22iIVK2c-BxdY_xsPIEw1a-uzBXcmC84aYbNtT2XJto0zUJzIrgSrujR4DKfVk8LhZMZv0lBWzvgU-irEV3G6iVbIuJyXl-gAoA5fs7UP4avFNyotsHydb6aUNHTCDaALUiCGTUI38ylpNShEPcoXeTgzFZxyjWgnNa1y2HMU5DPQgPyH2V-pV98i9pFbKK9NxeZwjOD05FFUopNemRly4kXj1bOOGV8TMwbu4gW-a2br_rwLbC72VW9dZd_9wy9pfd5uVYw9YeV6IUZRChvkUcPisOX0FGnX2LQUz_U3ya1PF8qZlLjhYwiYlZP0dZhxUWhT4Tp_XwcPlAtvasfiNlFZ_mc95OZOMPUXo-rA-bxJcIs89ogU5XJobT0StHNxTEg_8WrPTxIEwdqSXugYCJ5RvEA0oDV0VBITFO8iDv4OTdbv41ZA_yVPigMIAS6gP7kLgQMmSBzl2u0x8-E6Afud2QJJyPoVquRvkGuj_y8hdd37GJBdwPsuGwVPexC6EeQAqCnLwM7WjUaIVyvupEsIIC8613R2MBkalx9NWR-m7pJ-LAwS6IFLi5Zfj_459L0TvVdO2E5eco4
+
+{
+    "name": "Sample Product",
+    "description": "This is a sample product.",
+    "price": 99.99,
+    "quantity": 100
+}
